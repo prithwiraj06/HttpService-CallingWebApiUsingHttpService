@@ -1,0 +1,24 @@
+<table rules="all" frame="box">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Employee Gender</th>
+        <th>Employee Salary</th>
+    </tr>
+    <tr *ngFor="let emp of employee">
+        <td>{{emp.Id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.salary}}</td>
+    </tr>
+    <tr *ngIf="!employee">
+        <td [attr.colspan]="4">
+            {{statusMessage}}
+        </td>
+    </tr>
+    <tr *ngIf="employee && employee.length==0">
+        <td [attr.colspan]="4">
+            No Employee Employee Record Exists to Dispay
+        </td>
+    </tr>
+</table>
